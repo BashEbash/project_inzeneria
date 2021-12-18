@@ -3,8 +3,8 @@
 {% block title %} Cat or not result {% endblock %}
 
 {% block content %}
-    <div id="container">
-                        <div id="content">
+
+
 
 			                        <h3>Your result.</h3>
 
@@ -12,6 +12,10 @@
 
 
                                     <label  class="result_label">result</label>
+                                    <div class="container-fluid">
+                                        <img src="{{result_file}}" id="image">
+
+                                    </div>
 
 
 
@@ -19,6 +23,5 @@
 
 
 
-                        </div>
-    </div>
+
 {% endblock %}

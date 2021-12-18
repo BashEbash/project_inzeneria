@@ -1,3 +1,9 @@
+body{
+     width: 100%;
+     height: 100%;
+     bottom: 0;
+}
+
 
 main {
 
@@ -6,18 +12,17 @@ main {
      background: url('../photos/site_photos/cat.jpg') no-repeat;
      background-size: 100%;
      display: grid;
-     grid-template-columns: 1fr 1fr 1fr;
-     grid-template-rows: 50px 50px;
+     /*grid-template-columns: 1fr 1fr 1fr;
+     grid-template-rows: 50px 50px;*/
 
      position:absolute;
-     width: 100%;
-     height: 100%;
+     bottom: 0;
 
 
 
 }
 
-#content{
+/*#content{
     background-color: white;
     margin-left: 20%;
     margin-right: 20%;
@@ -25,7 +30,7 @@ main {
     opacity: .9;
 
 
-}
+}*/
 
 #nav{
     max-width:100%;
@@ -35,9 +40,17 @@ main {
 
 #container{
     bottom: 0;
-    margin-left: 0%;
+    /*margin-left: 0%;
     margin-right: 0%;
+    height: 100%;*/
+    background-color: white;
+    margin-left: 20%;
+    margin-right: 20%;
     height: 100%;
+    opacity: .9;
+    /*text-align: center;*/
+    text-align: center;
+
 }
 
 .upload_label {
@@ -68,6 +81,30 @@ main {
   position: absolute;
   z-index: -1;
 }
+
+#image{
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    height: auto;
+    border: 1px solid #000000;
+
+}
+
+#img{
+
+}
+
+
+displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+
+
+
+
 
 
 
