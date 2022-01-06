@@ -1,0 +1,5 @@
+DROP TABLE IF EXISTS results;
+CREATE TABLE results(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    file_name VARCHAR (20)
+);

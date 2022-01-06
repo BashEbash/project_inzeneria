@@ -2,19 +2,50 @@
 
 {% block title %} Cat or not {% endblock %}
 
+{% block script %}
+<script>
+function uploadFile(target) {
+    document.getElementById("file-name").innerHTML = target.files[0].name;
+    document.getElementsByClassName("file-button").style.pointerEvents='none';
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
 
-			                <h3>You can load you photo there, to check, if cat in this photo.</h3>
 
-                            <form method="POST" enctype="multipart/form-data" id="form" action="{{ url_for('result') }}" >
+<h3>You can load you photo there, to check, if cat in this photo.</h3>
+<form method="POST" enctype="multipart/form-data" id="form" action="{{ url_for('result') }}" >
+    <label id="file-btn" for="file"> select file </label>
+    <input type="file" id="file" class="inputfile" onchange='uploadFile(this)' style="display: none" name="file" accept=".jpg, .jpeg, .png">
+    <span id="file-name" class="file-box"></span>
+    <button type="file" class="btn btn-outline-success">Analyze</button>
 
 
-                                    <label for="file" class="upload_label">Choose your file</label>
-                                    <input type="file" class="upload" id="file" name="file" multiple accept=".jpg, .jpeg, .png">
-                                    <button type="file">Send photo</button>
+</form>
 
-                            </form>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div>
+        <ul class="list-group">
+    {% for message in messages %}
+      <li class="list-group-item list-group-item-danger">{{ message }}</li>
+    {% endfor %}
+        </ul>
+    </div>
+  {% endif %}
+{% endwith %}
 
+
+  {% if id %}
+    {% set count = 0 %}
+    <div class="list-group">
+    {% for i in range(id) %}
+        {% set count = i + 1 %}
+        <a href="{{url_for('results', id=count)}}" class="list-group-item list-group-item-action list-group-item-dark">Result number: {{count}}</a>
+    {% endfor %}
+    </div>
+  {% endif %}
 
 {% endblock %}

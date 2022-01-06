@@ -4,33 +4,15 @@ body{
      bottom: 0;
 }
 
-
 main {
-
      height: 100%;
      width: 100%;
-     background: url('../photos/site_photos/cat.jpg') no-repeat;
+     background: url('../photos/site_photos/cat.jpg') /*no-repeat*/;
      background-size: 100%;
      display: grid;
-     /*grid-template-columns: 1fr 1fr 1fr;
-     grid-template-rows: 50px 50px;*/
-
-     position:absolute;
+     position: absolute;
      bottom: 0;
-
-
-
 }
-
-/*#content{
-    background-color: white;
-    margin-left: 20%;
-    margin-right: 20%;
-    height: 100%;
-    opacity: .9;
-
-
-}*/
 
 #nav{
     max-width:100%;
@@ -40,46 +22,12 @@ main {
 
 #container{
     bottom: 0;
-    /*margin-left: 0%;
-    margin-right: 0%;
-    height: 100%;*/
     background-color: white;
     margin-left: 20%;
     margin-right: 20%;
-    height: 100%;
+    height: auto;
     opacity: .9;
-    /*text-align: center;*/
     text-align: center;
-
-}
-
-.upload_label {
-    width: 180px;
-    height: 50px;
-    border-radius: 4px;
-    text-align: center;
-    margin: 25px;
-    cursor: pointer;
-    display: block;
-    font: 14px/50px Tahoma;
-    transition: all 0.18s ease-in-out;
-    border: 1px solid #4FD666;
-    background: linear-gradient(to top right, #3EC97A, #69EA49 20%, rgba(255, 255, 255, 0) 80%, rgba(255, 255, 255, 0)) top right/500% 500%;
-    color: #4FD666;
-}
-
-.upload_label:hover {
-    color: white;
-    background-position: bottom left;
-}
-
-.upload {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
 }
 
 #image{
@@ -88,18 +36,33 @@ main {
     width: 100%;
     height: auto;
     border: 1px solid #000000;
-
 }
-
-#img{
-
-}
-
 
 displayed {
     display: block;
     margin-left: auto;
-    margin-right: auto }
+    margin-right: auto
+}
+
+.inputfile-box {
+  position: relative;
+}
+
+.container {
+  display: inline-block;
+  width: 100%;
+}
+
+.file-box {
+  height: 50px;
+}
+
+#file-btn{
+    border: 1px solid;
+    border-color: black;
+    background: white;
+    border-radius: 5px;
+}
 
 
 
