@@ -2,10 +2,11 @@ import sqlite3
 
 class Database():
     def __init__(self):
-        self.db_name = 'cat_or_not.db'
-        connection = sqlite3.connect(self.db_name)
-        with open('schema.sql') as f:
-            connection.executescript(f.read())
+        self.db_name = 'database/cat_or_not.db'
+        self.schema = 'database/schema.sql'
+        connection = self.get_connection()
+        with open(self.schema) as file:
+            connection.executescript(file.read())
         connection.commit()
         connection.close()
 

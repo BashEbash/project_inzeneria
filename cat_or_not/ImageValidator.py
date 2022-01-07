@@ -1,6 +1,5 @@
 from app_tools import file_size
 
-
 class ImageValidator():
 
     def __init__(self):
