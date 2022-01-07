@@ -12,10 +12,7 @@ function uploadFile(target) {
 {% endblock %}
 
 {% block content %}
-
-
-
-<h3>You can load you photo there, to check, if cat in this photo.</h3>
+    <h3>You can load you photo there, to check, if cat in this photo.</h3>
 <form method="POST" enctype="multipart/form-data" id="form" action="{{ url_for('result') }}" >
     <label id="file-btn" for="file"> select file </label>
     <input type="file" id="file" class="inputfile" onchange='uploadFile(this)' style="display: none" name="file" accept=".jpg, .jpeg, .png">
@@ -37,8 +34,7 @@ function uploadFile(target) {
   {% endif %}
 {% endwith %}
 
-
-  {% if id %}
+{% if id %}
     {% set count = 0 %}
     <div class="list-group">
     {% for i in range(id) %}
@@ -46,6 +42,6 @@ function uploadFile(target) {
         <a href="{{url_for('results', id=count)}}" class="list-group-item list-group-item-action list-group-item-dark">Result number: {{count}}</a>
     {% endfor %}
     </div>
-  {% endif %}
+{% endif %}
 
 {% endblock %}
