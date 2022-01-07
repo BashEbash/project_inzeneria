@@ -1,11 +1,10 @@
-import sqlite3
 import os
 from flask import Flask, render_template, request, url_for, flash, redirect
 from werkzeug.utils import secure_filename
 from app_tools import save_folder_exists, get_result, add_result, get_max_id
 from cat_or_not_ai.CatValidator import CatValidator
 from ImageValidator import ImageValidator
-import init_db
+
 app = Flask(__name__)
 app.secret_key = 'fasdryrinv4573hf63h4'
 app.config['UPLOAD_FOLDER'] = "static/photos/user_photos/"
