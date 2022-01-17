@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Cat or not - analize result {% endblock %}
+
+
+
+{% block content %}
+<div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+<h1 class="display-4 text-center">Analize result</h1>
+<hr class="my-4">
+<p class="lead">After analize we can receive possible messages: </p>
+<ul>
+    <li><b><i class="text-success">The cat is in the photo</i></b></li>
+    <li><b><i class="text-danger">The cat is not in the photo</i></b></li>
+</ul>
+<hr class="my-4">
+<p class="text-size-30 text-center">Analize result: </p>
+<hr class="my-4">
+<p class="result_label text-size-23 text-center">{{result}}</p>
+<hr class="my-4">
+<p class="text-size-30 text-center">Analized photo: </p>
+<hr class="my-4">
+<img class="img-fluid rounded mx-auto d-block border border-primary" src="{{image}}" id="image">
+<hr class="my-4">
+            <p class="lead mb-0 text-right">UAM, Software engineering, 2021/22</p>
+                    </div>
+        </div>
+{% endblock %}
