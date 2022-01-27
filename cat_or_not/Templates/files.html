@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} Cat or not - Team {% endblock %}
+
+
+
+{% block content %}
+<div class="card border-0 shadow my-5">
+            <div class="card-body p-5">
+<h1 class="display-4 text-center">Test Reports</h1>
+<hr class="my-4">
+<div class="list-group">
+  <a href="{{ url_for('static', filename='docs/test_plan.pdf') }}" class="list-group-item list-group-item-primary">Test Plan</a>
+  <a href="{{ url_for('static', filename='docs/report_nr_1.pdf') }}" class="list-group-item list-group-item-success">Report no. 1 - 16.12.2021r.</a>
+  <a href="{{ url_for('static', filename='docs/report_nr_2.pdf') }}" class="list-group-item list-group-item-success">Report no. 2 - 03.01.2022r.</a>
+  <a href="{{ url_for('static', filename='docs/report_nr_3.pdf') }}" class="list-group-item list-group-item-success">Report no. 3 - 10.01.2022r.</a>
+</div>
+<hr class="my-4">
+            <p class="lead mb-0 text-right">UAM, Software engineering, 2021/22</p>
+                    </div>
+        </div>
+{% endblock %}
