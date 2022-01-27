@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, url_for, flash, redirect
+from flask import Flask, render_template, request, url_for, flash, redirect, abort
 from werkzeug.utils import secure_filename
 from cat_or_not.AddictionalFiles.app_tools import save_folder_exists, model_exists, file_size
 from cat_or_not.Database.Database import Database
@@ -34,7 +34,7 @@ def result():
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(file.filename))
         file.save(file_path)
         is_cat = "The cat is in the photo" if catValidator.is_a_cat(file_path) == True else "The cat is not in the photo"
-        database.add_result(file.filename, file_size(file), is_cat)
+        database.add_result(secure_filename(file.filename), file_size(file), is_cat)
         return render_template("result.html", image=file_path, result=is_cat)
 
     else:
@@ -43,6 +43,8 @@ def result():
 @app.route('/results/<int:id>')
 def results(id):
     data = database.get_all_info(id)
+    if(not data):
+        abort(404)
     filename = os.path.join("../static/Photos/UserPhotos/", str(data[1]))
     filesize = data[2]
     analysis_status = data[3]
